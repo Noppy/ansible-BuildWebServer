@@ -1,2 +1,2 @@
 # ansible-test
-ansible roles for 
+ansible roles for self-study
