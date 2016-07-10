@@ -1,0 +1,9 @@
+---
+
+data_root:  "/data"
+www_dir:    "{{ data_root }}/www"
+tools_dir:  "{{ data_root }}/tools"
+kernel_dir: "{{ data_root }}/kernel"
+
+http_server_name: "local"
+http_port: "80"
