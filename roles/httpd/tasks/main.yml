@@ -7,7 +7,7 @@
   tags:
     - setup_httpd
 
--name: coustomize httpd server
-  include: coustomize_httpd.yml
+- name: customize httpd server
+  include: customize_httpd.yml
   tags:
-    - coustomize_httpd
+    - customize_httpd
