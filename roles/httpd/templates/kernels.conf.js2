@@ -1,5 +1,5 @@
 Alias /kernels /data/kernels/
-<Directory "/data/kernels/">
+<Directory "{{ kernel_dir }}">
     AllowOverride None
     Options Indexes FollowSymLinks
 </Directory>

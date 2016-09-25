@@ -17,8 +17,8 @@
     - "{{ kernel_dir }}"
 
 - name: copy configuration files in conf.d/ directory
-  copy:
-    src:   "{{ item }}"
+  template:
+    src:   "{{ item }}.js2"
     dest:  "/etc/httpd/conf.d/{{ item }}"
     owner: "root"
     group: "root"
