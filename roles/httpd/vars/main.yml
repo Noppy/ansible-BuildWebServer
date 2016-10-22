@@ -1,9 +1,18 @@
 ---
 
+# Set director paths for httpd and custome tools.
 data_root:  "/data"
 www_dir:    "{{ data_root }}/www"
 tools_dir:  "{{ data_root }}/tools"
 kernel_dir: "{{ data_root }}/kernel"
+bin_dir:    "{{ data_root }}/bin"
 
+# Set parameter for httpd
 http_server_name: "local"
 http_port: "80"
+
+# Set srpm2html shells
+srpm2html_shells:
+    - url: "https://raw.githubusercontent.com/Noppy/mytools/master/srpm2html/srpm_to_html.sh"
+    - url: "https://raw.githubusercontent.com/Noppy/mytools/master/srpm2html/kernel_srpm_to_html.sh"
+#

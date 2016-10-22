@@ -15,16 +15,40 @@
   with_items:
     - "{{ tools_dir }}"
     - "{{ kernel_dir }}"
+    - "{{ bin_dir }}"
 
-- name: copy configuration files in conf.d/ directory
+- name: set configuration files in conf.d/ directory
   template:
     src:   "{{ item }}.js2"
     dest:  "/etc/httpd/conf.d/{{ item }}"
     owner: "root"
     group: "root"
     mode:  0644
-  notify: restart httpd
+  notify:  restart httpd
   with_items:
     - "kernels.conf"
     - "tools.conf"
+
+- name: set shell 
+  get_url:
+    url:   "{{ item.url }}"
+    dest:  "{{ bin_dir }}"
+    owner: "root"
+    group: "root"
+    mode:  0775
+    seuser: "system_u"
+    setype: "httpd_sys_content_t"
+  with_items: '{{srpm2html_shells}}'
+
+- name: set httpd static contents
+  copy:
+    src:   "{{ item }}"
+    dest:  "{{ www_dir }}/{{ item }}"
+    owner: apache
+    group: apache
+    mode:  0664
+    seuser: "system_u"
+    setype: "httpd_sys_content_t"
+  with_items:
+    - "index.html"
 
