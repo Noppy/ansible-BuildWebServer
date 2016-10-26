@@ -1,5 +1,6 @@
-Alias /tools /data/tools/
+Alias /tools {{ tools_dir }}
 <Directory "{{ tools_dir }}">
+    Require all granted
     AllowOverride None
     Options Indexes FollowSymLinks
     Allow from all

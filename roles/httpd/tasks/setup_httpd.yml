@@ -2,11 +2,21 @@
 # file: /roles/httpd/tasks/install_httpd.yml
 # This playbook deploys the apache httpd server
 
-- name: install the Apache package
+- name: install the Apache package(dnf)
   dnf:
     name:  "{{ item }}"
     state: "latest"
   notify:  "restart httpd"
+  when:    "ansible_pkg_mgr == 'dnf'"
+  with_items:
+    - httpd
+
+- name: install the Apache package(yum)
+  yum:
+    name:  "{{ item }}"
+    state: "latest"
+  notify:  "restart httpd"
+  when:    "ansible_pkg_mgr == 'yum'"
   with_items:
     - httpd
  
@@ -78,4 +88,3 @@
     - http
     - https
 
-#- name: add date dir to selinux
