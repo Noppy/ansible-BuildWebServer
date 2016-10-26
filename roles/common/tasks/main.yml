@@ -1,16 +1,10 @@
 ---
+# file: /roles/common/tasks/main.yml
+# This playbook deploys the apache httpd server
 
-# file: roles/common/tasks/main.yml
-# 全サーバで設定が必要な項目のrole
-#
-
-
-- name: Bootstrap a host without python2 installed
-  raw: dnf install -y python python-dnf libselinux-python python-firewall
+- name: install python2
+  include: install-pkg-RedHat-dnf.yml
+  when: "ansible_pkg_mgr == 'dnf'"
   tags:
-    - common-python
-# comment-
-# python            :Required by ansible.
-# python-dnf        :Required by dnf module.
-# libselinux-python :Required, if SELinux enabled on remote nodes.
-# python-firewall   :Required by firewall module.
+    - install_python2
+
