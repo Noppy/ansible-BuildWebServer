@@ -2,5 +2,6 @@
 TestGest_Pro
 TestGest_Stg
 TestInventry
+Inventry
 *.retry
 *.swp

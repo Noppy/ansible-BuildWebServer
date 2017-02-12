@@ -17,29 +17,32 @@
     - "{{ kernel_dir }}"
     - "{{ bin_dir }}"
 
-- name: set configuration files in conf.d/ directory(fedora)
+- name: set configuration files in conf.d/ directory(over fedora24 or CentOS7 )
   template:
-    src:   "{{ item }}.fedora.js2"
+    src:   "{{ item }}.CentOS7.js2"
     dest:  "/etc/httpd/conf.d/{{ item }}"
     owner: "root"
     group: "root"
     mode:  0644
   notify:  restart httpd
-  when: "ansible_distribution == 'Fedora' and ansible_distribution_major_version >= 24"
+  when: "ansible_distribution == 'Fedora'
+         and ansible_distribution_major_version >= 24"
   with_items:
     - "kernels.conf"
     - "tools.conf"
 
-- name: set shell 
-  get_url:
-    url:   "{{ item.url }}"
-    dest:  "{{ bin_dir }}"
+- name: set configuration files in conf.d/ directory( Amazon Linux )
+  template:
+    src:   "{{ item }}.Amazon.js2"
+    dest:  "/etc/httpd/conf.d/{{ item }}"
     owner: "root"
     group: "root"
-    mode:  0775
-    seuser: "system_u"
-    setype: "httpd_sys_content_t"
-  with_items: '{{srpm2html_shells}}'
+    mode:  0644
+  notify:  restart httpd
+  when: "ansible_distribution == 'Amazon'"
+  with_items:
+    - "kernels.conf"
+    - "tools.conf"
 
 - name: set httpd static contents
   copy:
