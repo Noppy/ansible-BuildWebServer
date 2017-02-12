@@ -1,7 +1,4 @@
 .gitkeep
-TestGest_Pro
-TestGest_Stg
-TestInventry
-Inventry
+Inventory
 *.retry
 *.swp

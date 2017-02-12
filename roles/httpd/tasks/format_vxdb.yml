@@ -1,0 +1,7 @@
+---
+# file: /roles/httpd/tasks/format_vxdb.yml 
+# This playbook format /dev/vxdb
+
+- name: test
+  debug:
+    msg: "test test"
