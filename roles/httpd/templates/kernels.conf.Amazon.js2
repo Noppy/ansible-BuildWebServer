@@ -1,0 +1,7 @@
+Alias /kernels {{ kernel_dir }}
+<Directory "{{ kernel_dir }}">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+</Directory>
