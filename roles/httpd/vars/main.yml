@@ -16,8 +16,7 @@ http_port: "80"
 
 # Set srpm2html shells
 srpm2html_shells:
-    - url: "https://raw.githubusercontent.com/Noppy/mytools/master/srpm2html/srpm_to_html.sh"
-    - url: "https://raw.githubusercontent.com/Noppy/mytools/master/srpm2html/kernel_srpm_to_html.sh"
+    - url:  "https://gist.githubusercontent.com/Noppy/027ea703dd7084be0c3d4d99ce618109/raw/e596fec49cfd6f3487c75066c14581eb84299b6c/srpm2html.py"
 
 # for making gnu global
 global_version:   "global-6.5.6"
