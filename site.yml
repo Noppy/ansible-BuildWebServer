@@ -1,5 +1,4 @@
 ---
 #file: site.yml
 
-
 - include: webservers.yml
