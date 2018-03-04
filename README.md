@@ -12,11 +12,12 @@ create a "inventory" file on the play-book root directory.
 cd ansible-BuildWebServer
 vi inventory
 ```
-(2) Regist ansible agent servers.
+(2) Regist ansible agent servers.  
 The following sample is for the aws ec2 server.("xxxxx" is ip or DNS name.) 
-  [webservers]
-  xxxxxxxxxxxxxx ansible_ssh_user=ec2-user  
-
+```
+[webservers]
+xxxxxxxxxxxxxx ansible_ssh_user=ec2-user
+````
 ## Set PairKey(SSH identity file)
 Set aws pair key at ".ssh" directory
 ```
