@@ -105,6 +105,7 @@
     src:    "LABEL=rpmbuild"
     fstype: ext4
     opts:   defaults,noatime
+    passno: 2
     state:  mounted
   when: part_dev.stat.exists
 
