@@ -104,6 +104,7 @@
     name:   "{{ rpmbuild_dir }}"
     src:    "LABEL=rpmbuild"
     fstype: ext4
+    opts:   defaults,noatime
     state:  mounted
   when: part_dev.stat.exists
 
