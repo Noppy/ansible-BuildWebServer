@@ -1,4 +1,5 @@
 .gitkeep
 Inventory
+inventory
 *.retry
 *.swp
