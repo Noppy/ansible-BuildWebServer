@@ -25,5 +25,5 @@ gnu_global_tar_url: "ftp://ftp.gnu.org/pub/gnu/global/{{ global_version }}.tar.g
 check_global_file_path: "/usr/local/bin/htags"
 
 # EBS device name in AWS
-ebs_dev_name: "/dev/xvdb"
-partition_dev_name: "{{ ebs_dev_name }}1"
+ebs_dev_name: "{{ EbsDevName }}"
+partition_dev_name: "{{ PartitionDevName }}"

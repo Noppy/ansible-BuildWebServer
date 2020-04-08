@@ -28,5 +28,13 @@ chmod 600 ~/.ssh/aws_id_rsa
 
 ## execute ansible play-book
 ```
-ansible-playbook site.yml -i inventory --private-key ~/.ssh/aws_id_rsa 
+#Nitro系の場合
+EbsDevName="/dev/nvme2"
+PartitionDevName="/dev/nvme2n1"
+#Xen系の場合
+EbsDevName="/dev/xvdb"
+PartitionDevName="/dev/xvdb1"
+
+#セットアップ
+ansible-playbook site.yml --extra-vars "EbsDevName=${EbsDevName} PartitionDevName=${PartitionDevName}" -i inventory
 ```
