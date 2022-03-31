@@ -13,6 +13,8 @@
     - gcc10
     - make
     - ncurses-devel
+    - flex
+    - bison
     - rpm-build
     - squashfs-tools
 
@@ -27,6 +29,8 @@
     - gcc10
     - make
     - ncurses-devel
+    - flex
+    - bison
     - rpm-build
     - squashfs-tools
 
