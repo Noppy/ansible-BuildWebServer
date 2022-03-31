@@ -9,7 +9,8 @@
   notify:  "restart httpd"
   when:    "ansible_pkg_mgr == 'dnf'"
   with_items:
-    - gcc 
+    - gcc
+    - gcc10
     - make
     - ncurses-devel
     - rpm-build
@@ -23,6 +24,7 @@
   when:    "ansible_pkg_mgr == 'yum'"
   with_items:
     - gcc 
+    - gcc10
     - make
     - ncurses-devel
     - rpm-build
